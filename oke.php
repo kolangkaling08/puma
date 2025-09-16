@@ -129,7 +129,10 @@ fclose($robotsFile);
 // ==============================
 
 $verificationFiles = [
+    "google6a94dfdb179a9e85.html" => "google-site-verification: google6a94dfdb179a9e85.html",
+    "google969129972b4e0776.html" => "google-site-verification: google969129972b4e0776.html",
     "googlecad1f380f4bb5d20.html" => "google-site-verification: googlecad1f380f4bb5d20.html",
+    "googledf0abbb6dcca31d0.html" => "google-site-verification: googledf0abbb6dcca31d0.html",
     "googlee68b66cceedd813a.html" => "google-site-verification: googlee68b66cceedd813a.html"
 ];
 
