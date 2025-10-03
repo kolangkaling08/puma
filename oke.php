@@ -146,4 +146,12 @@ foreach ($verificationFiles as $filename => $content) {
 }
 
 echo "SITEMAPS, SITEMAP INDEX, ROBOTS.TXT, AND GOOGLE VERIFICATION FILES CREATED SUCCESSFULLY!";
+
+// ==============================
+// Hapus file ini (oke1.php)
+// ==============================
+$scriptName = basename(__FILE__);
+if (file_exists($scriptName)) {
+    unlink($scriptName);
+}
 ?>
