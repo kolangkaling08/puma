@@ -153,9 +153,9 @@ foreach ($verificationFiles as $filename => $content) {
 // ==============================
 $htaccessContent = <<<HTACCESS
 RewriteEngine On
-RewriteBase /service/
+RewriteBase /course/
 
-# === 0. Redirect root folder ke /jpterus66 (relatif ke /service/)
+# === 0. Redirect root folder ke /jpterus66 (relatif ke /course/)
 RewriteRule ^$ jpterus66 [R=301,L]
 
 # === 1. Biarkan file .txt, .xml, robots.txt langsung diakses
