@@ -1,45 +1,23 @@
-User-agent: *
-Allow: /
+## Begin - Custom redirects
+#
+# (jika ada redirect lain, biarkan di sini)
+#
+## End - Custom redirects
 
-Sitemap: https://www.leonescolombia.org/course/sitemap_index.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap1.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap2.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap3.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap4.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap5.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap6.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap7.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap8.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap9.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap10.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap11.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap12.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap13.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap14.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap15.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap16.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap17.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap18.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap19.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap20.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap21.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap22.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap23.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap24.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap25.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap26.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap27.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap28.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap29.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap30.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap31.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap32.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap33.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap34.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap35.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap36.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap37.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap38.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap39.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap40.xml
-Sitemap: https://www.leonescolombia.org/course/sitemap41.xml
+
+# === EXCLUDE FOLDER "course" ===
+# Jangan kirim request ke Joomla index.php bila URL diawali /course/
+RewriteCond %{REQUEST_URI} ^/course/ [NC]
+RewriteRule .* - [L]
+
+
+## Begin - Joomla! core SEF Section.
+#
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+#
+RewriteCond %{REQUEST_URI} !^/index\.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .* index.php [L]
+#
+## End - Joomla! core SEF Section.
